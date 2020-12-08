@@ -31,19 +31,24 @@ function setRoshanTimer(){
   if(rosh === null){
     let sec = 479 // 8 min = 480s
     let sec2 = 659 // 11 min = 660s
+    let aeg = 299 // 5 min = 300s
     let spawnSoonIndicator = false;
 
     mainHeading.classList.add('hidden')
     howToUse.classList.add('hidden')
 
     const timer = setInterval(() => {
-      timedItem.innerHTML= `<h1><span class="timer-set-msg">Рошан появится через</span> <span class="timer-set">${Math.floor(sec % 3600 / 60)}м ${Math.floor(sec % 3600 % 60)}с - ${Math.floor(sec2 % 3600 / 60)}м ${Math.floor(sec2 % 3600 % 60)}с</span></h1>`
+      timedItem.innerHTML= `<h1><span class="timer-set-msg">Рошан появится через</span> <span class="timer-set">${Math.floor(sec % 3600 / 60)}м ${Math.floor(sec % 3600 % 60)}с - ${Math.floor(sec2 % 3600 / 60)}м ${Math.floor(sec2 % 3600 % 60)}с <br /> ${Math.floor(aeg % 3600 / 60)}м ${Math.floor(aeg % 3600 % 60)}с</span></h1>`
       sec--
       sec2--
+      aeg--
+      if(aeg < 10){
+        aeg++
+      }
       if (sec < 0 && sec2 > 0) {
         sec++
         const setTimerMsg = document.querySelector('.timer-set-msg');
-        setTimerMsg.innerHTML = 'Рошан вот-вот появится'
+        setTimerMsg.innerHTML = 'Рошан мог появиться'
         
         if(spawnSoonIndicator === false){
           document.body.classList.add('bg-red')
