@@ -1,0 +1,19 @@
+{
+  "name": "dota-time",
+  "version": "1.0.0",
+  "description": "This app helps you keep track of rosh spawn time in Dota 2",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Novailoveyou/dota-time.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Novailoveyou/dota-time/issues"
+  },
+  "homepage": "https://github.com/Novailoveyou/dota-time#readme"
+}
