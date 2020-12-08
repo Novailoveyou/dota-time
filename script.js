@@ -33,6 +33,7 @@ function setRoshanTimer(){
     let sec2 = 659 // 11 min = 660s
     let aeg = 299 // 5 min = 300s
     let spawnSoonIndicator = false;
+    let spawnSoonIndicatorAeg = false;
 
     mainHeading.classList.add('hidden')
     howToUse.classList.add('hidden')
@@ -42,8 +43,17 @@ function setRoshanTimer(){
       sec--
       sec2--
       aeg--
-      if(aeg < 10){
+      if(aeg < 0){
         aeg++
+
+        if(spawnSoonIndicatorAeg === false){
+          document.body.classList.add('bg-red')
+          setTimeout(() => {
+            document.body.classList.remove('bg-red')
+            setTimerMsg.classList.add('c-red')
+          }, 2000);
+          spawnSoonIndicatorAeg = true;
+        }
       }
       if (sec < 0 && sec2 > 0) {
         sec++
