@@ -17,7 +17,7 @@ function onSpeak(e) {
   const msg = e.results[0][0].transcript
 
   console.log(msg)
-  if(msg.toLowerCase() === 'маша время'){
+  if(msg.toLowerCase().includes('маша время')){
     setRoshanTimer()
   }
 }
